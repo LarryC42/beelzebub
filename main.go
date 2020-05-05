@@ -2,10 +2,16 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"time"
 
-	"test"
+	"github.com/LarryC42/beelzebub/gen"
 )
 
 func main() {
-	fmt.Println(test.Test())
+	rand.Seed(time.Now().UnixNano())
+	profile := gen.ProfileGenerator()
+	for k, v := range profile {
+		fmt.Printf("%s: %s\n", k, v)
+	}
 }
